@@ -1,5 +1,5 @@
 import {
-  Outlet,
+  // Outlet,
   Route,
   RouterProvider,
   createBrowserRouter,
@@ -14,7 +14,7 @@ export const AppRouter = () => {
       router={createBrowserRouter(
         createRoutesFromElements(
           <Route>
-            <Route element={<AppointmentPage />} path="/" />
+            <Route element={<AppointmentPage  />} path="/" />
             <Route element={<ContactPage />} path="/contact" />
           </Route>
         )
