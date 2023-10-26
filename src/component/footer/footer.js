@@ -12,7 +12,7 @@ function Footer() {
           <FaPhone />
           <a href="/contact">Add Contact</a>
           <FaCalendarPlus />
-          <a href="/appointment" className="text-white hover:text-gray-300">
+          <a href="/" className="text-white hover:text-gray-300">
             Add Appointment
           </a>
         </div>
