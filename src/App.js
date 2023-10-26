@@ -1,3 +1,4 @@
+import Footer from "./component/footer/footer";
 import Header from "./component/header";
 import { AppRouter } from "./routes";
 
@@ -6,6 +7,7 @@ function App() {
     <div>
       <Header />
       <AppRouter />
+     <Footer/>
     </div>
   );
 }
