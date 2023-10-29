@@ -3,8 +3,9 @@ const Appointment = require("../model/appointmentModel");
 
 // Create New appointment
 exports.newAppointment = async (req, res, next) => {
-  const { name, date, time, contact } = req.body.appointmentInfo; // Extract appointmentInfo from the request body
   console.log("req.body", req.body);
+  const { name, date, time, contact } = req.body; // Extract appointmentInfo from the request body
+  
   try {
     const appointmentData = await Appointment.create({
       name,
