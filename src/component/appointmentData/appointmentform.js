@@ -84,7 +84,7 @@ function AppointmentForm() {
           onClick={(e)=>{
             e.preventDefault()
             console.log("appointments",appointment)
-            axios.post('http://localhost:3005/api/v1//appointment/form',appointment,{"content-type":"application/json"})
+            axios.post('http://localhost:3006/api/v1/appointment/form',appointment,{"content-type":"application/json"})
             .then(function (response) {
               console.log(response);
             })
