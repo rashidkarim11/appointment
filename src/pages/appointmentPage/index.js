@@ -5,22 +5,17 @@ import { getAllApointments } from "../../api/appointment";
 
 function AppointmentPage() {
   const [appointData, setAppointData] = useState([]);
-  const handleGetAllAppointmentData = async () => {
-    try {
-      const { data } = await getAllApointments();
-      setAppointData(data);
-    } catch (error) {
-      throw error;
-    }
-  };
 
   useEffect(() => {
-    try {
-      handleGetAllAppointmentData();
-    } catch (error) {}
+    getAllApointments()
+      .then(({ data }) => {
+        setAppointData(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
-
-  console.log(appointData, "app");
+  console.log(appointData, "data");
   return (
     <>
       <div className="">
