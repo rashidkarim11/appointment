@@ -19,6 +19,9 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const appointment = require("./routes/appointment");
+const contact = require("./routes/contact");
+
+app.use("/api/v1", contact);
 
 app.use("/api/v1", appointment);
 
