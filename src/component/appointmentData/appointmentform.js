@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
+import { addToAppointment } from "../../api/appointment";
 
 const getTodayString = () => {
   const [month, day, year] = new Date().toLocaleDateString("en-US").split("/");
@@ -8,15 +9,28 @@ const getTodayString = () => {
 };
 
 function AppointmentForm() {
-  // const [date, setDate] = useState(""); // Initialize date state with useState
-  // const [time, setTime] = useState("");
-  // const [name, setName]=useState("");
   const [appointment, setappointment] = useState({
     name: "",
     date: "",
     time: "",
     contact: "",
   });
+
+  const [addAppointment, setAddAppointment] = useState(false);
+
+  const addDataToAppointment = async (e) => {
+    e.preventDefault();
+    try {
+      setAddAppointment(true);
+      const data = await addToAppointment(appointment);
+      setAddAppointment(false);
+      alert("Added Appointment");
+    } catch (error) {
+      setAddAppointment(false);
+      alert("Cannot Appointment");
+      console.log(error);
+    }
+  };
 
   return (
     <div className="px-8 mt-8 mb-4 text-[poppins]">
@@ -79,22 +93,20 @@ function AppointmentForm() {
           />
         </div>
         <button
-          type="submit"
           className="border-none bg-white rounded border-gray-700 px-10  py-3 mt-2"
-          onClick={(e)=>{
-            e.preventDefault()
-            console.log("appointments",appointment)
-            axios.post('http://localhost:3006/api/v1/appointment/form',appointment,{"content-type":"application/json"})
-            .then(function (response) {
-              console.log(response);
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-          }
-          }
+          onClick={addDataToAppointment}
+          type="submit"
         >
-          Submit
+          {addAppointment ? (
+            <div class="relative w-10 h-10">
+              <div class="absolute top-0 left-0 w-full h-full">
+                <div class="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-500 border-solid border-4 border-r-0"></div>
+              </div>
+              <div class="flex items-center justify-center w-8 h-8 absolute top-0 left-0"></div>
+            </div>
+          ) : (
+            "Submit"
+          )}
         </button>
       </form>
     </div>
