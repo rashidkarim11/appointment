@@ -6,9 +6,9 @@ function AppointmentTableData() {
             <thead class="text-xs uppercase text-white bg-blue-400">
               <tr>
                 <th class="p-3">Name</th>
-                <th class="p-3">Email</th>
-                <th class="p-3">Number</th>
-                <th class="p-3">Date & Time</th>
+                <th class="p-3">Contact</th>
+                <th class="p-3">Date</th>
+                <th class="p-3">Time</th>
               </tr>
             </thead>
             <tbody>
@@ -16,25 +16,25 @@ function AppointmentTableData() {
                 <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                   Maira
                 </th>
-                <td class="p-3">maira@gmail.com</td>
                 <td class="p-3">67894456778</td>
-                <td class="p-3">sun 4pm</td>
+                <td class="p-3">10/28/2023</td>
+                <td class="p-3">4pm</td>
               </tr>
               <tr class="bg-white">
                 <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                   Maira
                 </th>
-                <td class="p-3">maira@gmail.com</td>
                 <td class="p-3">67894456778</td>
-                <td class="p-3">sun 4pm</td>
+                <td class="p-3">10/28/2023</td>
+                <td class="p-3">4pm</td>
               </tr>
               <tr class="bg-white">
                 <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                   Maira
                 </th>
-                <td class="p-3">maira@gmail.com</td>
                 <td class="p-3">67894456778</td>
-                <td class="p-3">sun 4pm</td>
+                <td class="p-3">10/28/2023</td>
+                <td class="p-3">4pm</td>
               </tr>
             </tbody>
           </table>
