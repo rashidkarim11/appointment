@@ -5,7 +5,7 @@ const Appointment = require("../model/appointmentModel");
 exports.newAppointment = async (req, res, next) => {
   console.log("req.body", req.body);
   const { name, date, time, contact } = req.body; // Extract appointmentInfo from the request body
-  
+
   try {
     const appointmentData = await Appointment.create({
       name,
@@ -21,7 +21,7 @@ exports.newAppointment = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({
       success: false,
-      error: "Appointment could not be created",
+      error: error,
     });
   }
 };
@@ -29,8 +29,10 @@ exports.newAppointment = async (req, res, next) => {
 // appointmentController.js
 exports.getAllAppointment = async (req, res, next) => {
   // Your code to retrieve appointment data should go here
+  const response = await Appointment.find();
+
   res.status(200).json({
     success: true,
-    // Data retrieved from your database
+    data: response,
   });
 };
