@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
-const contactSchema = new mongoose.Schema({
+const contactSchema = new mongoose.Schema({//creates a new Mongoose schema
+    //defines field in the schema
   name: {
     type: String,
     required: true,
@@ -15,4 +16,4 @@ const contactSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("contact", contactSchema);
+module.exports = mongoose.model("contact", contactSchema);//exports the schema as a Mongoose model

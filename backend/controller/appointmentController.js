@@ -2,11 +2,12 @@
 const Appointment = require("../model/appointmentModel");
 
 // Create New appointment
-exports.newAppointment = async (req, res, next) => {
+exports.newAppointment = async (req, res, next) => {//controller function for creating a new appointment
   console.log("req.body", req.body);
-  const { name, date, time, contact } = req.body; // Extract appointmentInfo from the request body
+  const { name, date, time, contact } = req.body;// destructuring to extract specific properties
 
   try {
+    //to create a new appointment document in the MongoDB database 
     const appointmentData = await Appointment.create({
       name,
       date,
@@ -26,9 +27,8 @@ exports.newAppointment = async (req, res, next) => {
   }
 };
 
-// appointmentController.js
+//retrieves all appointment records from the database and sends them as a response.
 exports.getAllAppointment = async (req, res, next) => {
-  // Your code to retrieve appointment data should go here
   const response = await Appointment.find();
 
   res.status(200).json({
