@@ -1,4 +1,4 @@
-function ContactTableData() {
+function ContactTableData(contactData) {
   return (
     <>
       <div class="ml-5 mt-5 relative overflow-x-auto">
@@ -11,31 +11,22 @@ function ContactTableData() {
             </tr>
           </thead>
           <tbody>
-            <tr class="bg-white">
-              <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                Umer
-              </th>
-              <td class="p-3">81927454</td>
-              <td class="p-3">umerrizwan2023@gmail.com</td>
-            </tr>
-            <tr class="bg-white">
-              <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                Hassan
-              </th>
-              <td class="p-3">9182635382</td>
-              <td class="p-3">hassan@gmail.com</td>
-            </tr>
-            <tr class="bg-white">
-              <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                Rashid
-              </th>
-              <td class="p-3">1722538213</td>
-              <td class="p-3">rashid@gmail.com</td>
-            </tr>
+            {contactData.length &&
+              contactData.map(({ name, number, email }) => {
+                return (
+                  <tr class="bg-white">
+                    <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                      {name}
+                    </th>
+                    <td class="p-3">{number}</td>
+                    <td class="p-3">{email}</td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
       </div>
     </>
   );
-}
+            }
 export default ContactTableData;
