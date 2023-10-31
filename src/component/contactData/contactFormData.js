@@ -1,4 +1,4 @@
-function ContactTableData(contactData) {
+function ContactTableData({ contactData }) {
   return (
     <>
       <div class="ml-5 mt-5 relative overflow-x-auto">
@@ -28,5 +28,5 @@ function ContactTableData(contactData) {
       </div>
     </>
   );
-            }
+}
 export default ContactTableData;

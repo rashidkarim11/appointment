@@ -15,7 +15,7 @@ function AppointmentPage() {
         console.log(error);
       });
   }, []);
-  console.log(appointData, "data");
+
   return (
     <>
       <div className="">
