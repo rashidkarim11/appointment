@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import AppointmentForm from "../../component/appointmentData/appointmentform";
 import AppointmentTableData from "../../component/appointmentData/appointmentFormTable";
 import { getAllApointments } from "../../api/appointment";
@@ -15,7 +15,7 @@ function AppointmentPage() {
         console.log(error);
       });
   }, []);
-  console.log(appointData, "data");
+
   return (
     <>
       <div className="">

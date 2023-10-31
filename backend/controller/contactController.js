@@ -26,7 +26,7 @@ exports.newContact = async (req, res, next) => {
 };
 
 // appointmentController.js
-exports.getAllContacts= async (req, res, next) => {
+exports.getAllContacts = async (req, res, next) => {
   // Your code to retrieve appointment data should go here
   const response = await Contact.find();
 

@@ -2,13 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { addToContacts } from "../../api/contact";
 
-
-
 const ContactForm = () => {
-
   const [contact, setcontact] = useState({
     name: "",
-    number: "",
+    phone: "",
     email: "",
   });
   const [addContact, setAddContact] = useState(false);
@@ -39,9 +36,7 @@ const ContactForm = () => {
             required
             className="border-none rounded border-gray-700 px-4 py-3 mt-2"
             value={contact.name}
-            onChange={(e) =>
-              setcontact({ ...contact, name: e.target.value })
-            }
+            onChange={(e) => setcontact({ ...contact, name: e.target.value })}
           />
         </div>
 
@@ -49,13 +44,11 @@ const ContactForm = () => {
           <label className="text-left">Phone:</label>
           <input
             type="number"
-            placeholder="Enter your Phone number"
+            placeholder="Enter your Phone phone"
             required
             className="border-none rounded border-gray-700 px-4 py-3 mt-2"
-            value={contact.number}
-            onChange={(e) =>
-              setcontact({ ...contact, number: e.target.value })
-            }
+            value={contact.phone}
+            onChange={(e) => setcontact({ ...contact, phone: e.target.value })}
           />
         </div>
 
@@ -67,9 +60,7 @@ const ContactForm = () => {
             required
             className="border-none rounded border-gray-700 px-4 py-3 mt-2"
             value={contact.email}
-            onChange={(e) =>
-              setcontact({ ...contact, email: e.target.value })
-            }
+            onChange={(e) => setcontact({ ...contact, email: e.target.value })}
           />
         </div>
 
