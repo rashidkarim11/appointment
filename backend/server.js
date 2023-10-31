@@ -1,7 +1,7 @@
 const PORT = process.env.PORT || 3006;
 const express = require("express");
 const connectDatabase = require("./config/database");
-const bodyParser = require("body-parser");
+const bodyParser = require("body-parser");// allows the application to parse the request body data
 const cors = require("cors");
 const dotenv = require("dotenv");
 
@@ -36,9 +36,7 @@ process.on("uncaughtException", (err) => {
   process.exit(1);
 });
 
-// connectDatabase();
-
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, () => {//starts the Express server and listens on the port
   console.log(`Server running`, PORT);
 });
 
